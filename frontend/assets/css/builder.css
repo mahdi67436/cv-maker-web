@@ -1,0 +1,763 @@
+/* FreeUltraCV - Resume Builder Styles */
+
+/* ==================== Builder Page Layout ==================== */
+.builder-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--bg-primary);
+}
+
+/* Builder Header */
+.builder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-xl);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.builder-header .header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.back-btn:hover {
+    background: var(--border-light);
+}
+
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.resume-title-input {
+    background: none;
+    border: none;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: var(--spacing-sm);
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-fast);
+}
+
+.resume-title-input:focus {
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+
+.save-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+}
+
+.status-dot.saving {
+    background: var(--warning);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.builder-header .header-center {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.template-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.template-btn:hover {
+    background: var(--border-light);
+}
+
+.template-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.builder-header .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* ==================== Builder Container ==================== */
+.builder-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - var(--header-height));
+}
+
+/* Builder Sidebar */
+.builder-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+}
+
+.section-nav {
+    padding: var(--spacing-md);
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: none;
+    border: none;
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+    margin-bottom: var(--spacing-xs);
+}
+
+.nav-section svg {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-section:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.nav-section.active {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0.1) 100%);
+    color: var(--primary-light);
+    border-left: 3px solid var(--primary);
+}
+
+/* ==================== Main Builder Area ==================== */
+.builder-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-section h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.section-header-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header-inline h2 {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ai-assist-bar {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ==================== Items List (Experience, Education, etc.) ==================== */
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.item-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    position: relative;
+}
+
+.item-card.dragging {
+    opacity: 0.5;
+}
+
+.item-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    cursor: grab;
+}
+
+.item-card-header:active {
+    cursor: grabbing;
+}
+
+.item-card-title {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.item-card-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.item-action-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.item-action-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.item-action-btn.delete:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+.item-action-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.item-card.collapsed .item-card-body {
+    display: none;
+}
+
+.item-card.collapsed .item-card-header::after {
+    content: '▼';
+    font-size: 12px;
+}
+
+.item-card:not(.collapsed) .item-card-header::after {
+    content: '▲';
+    font-size: 12px;
+}
+
+/* ==================== Skills Section ==================== */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+    border-color: var(--primary);
+}
+
+.skill-tag .remove-skill {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.skill-tag .remove-skill:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+}
+
+.add-skill-form {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.add-skill-form input {
+    flex: 1;
+}
+
+.skill-category-select {
+    min-width: 150px;
+}
+
+.skill-level-select {
+    min-width: 120px;
+}
+
+/* ==================== Builder Preview Panel ==================== */
+.builder-preview {
+    width: 400px;
+    flex-shrink: 0;
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-secondary);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.preview-header h3 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.preview-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.preview-zoom {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.preview-zoom:hover {
+    background: var(--border-light);
+}
+
+.preview-zoom:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#zoomLevel {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    min-width: 40px;
+    text-align: center;
+}
+
+.preview-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    background: var(--bg-tertiary);
+}
+
+/* Resume Preview Styles */
+.resume-preview {
+    width: 100%;
+    max-width: 100%;
+    background: white;
+    color: #333;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    transform-origin: top center;
+    transition: transform var(--transition-base);
+}
+
+/* Modern Template Preview */
+.resume-preview.modern {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+.resume-preview.modern .preview-header {
+    text-align: center;
+    border-bottom: 2px solid #2563eb;
+    padding: 15px;
+    background: none;
+}
+
+.resume-preview.modern .preview-name {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #1e40af;
+    margin: 0;
+}
+
+.resume-preview.modern .preview-title {
+    font-size: 12pt;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.resume-preview.modern .preview-section {
+    padding: 12px 15px;
+}
+
+.resume-preview.modern .section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #2563eb;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+/* Professional Template Preview */
+.resume-preview.professional {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+}
+
+.resume-preview.professional .preview-header {
+    text-align: center;
+    border-bottom: 3px solid #000;
+    padding: 12px;
+    background: none;
+}
+
+.resume-preview.professional .preview-name {
+    font-size: 20pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.resume-preview.professional .preview-title {
+    font-size: 11pt;
+    margin-top: 4px;
+}
+
+/* Creative Template Preview */
+.resume-preview.creative {
+    font-family: 'Verdana', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+.resume-preview.creative .preview-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.resume-preview.creative .preview-name {
+    font-size: 28pt;
+    font-weight: bold;
+    color: white;
+}
+
+.resume-preview.creative .preview-title {
+    font-size: 12pt;
+    opacity: 0.9;
+    color: white;
+}
+
+.resume-preview.creative .preview-section {
+    padding: 15px;
+    background: #f8f9fa;
+    margin: 10px 15px;
+    border-radius: 6px;
+}
+
+/* ATS Template Preview */
+.resume-preview.ats {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #000;
+}
+
+.resume-preview.ats .preview-header {
+    text-align: center;
+    padding: 15px;
+}
+
+.resume-preview.ats .preview-name {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.resume-preview.ats .section-title {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Dark Template Preview */
+.resume-preview.dark {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+.resume-preview.dark .preview-header {
+    text-align: center;
+    border-bottom: 2px solid #3b82f6;
+    padding: 15px;
+    background: none;
+}
+
+.resume-preview.dark .preview-name {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #f8fafc;
+}
+
+.resume-preview.dark .preview-title {
+    font-size: 12pt;
+    color: #94a3b8;
+}
+
+.resume-preview.dark .section-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #3b82f6;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+/* ==================== AI Modal ==================== */
+.ai-chat {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: var(--spacing-md);
+}
+
+.ai-message {
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.ai-message p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.ai-message ul {
+    padding-left: var(--spacing-lg);
+}
+
+.ai-message li {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.ai-input-container {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.ai-input-container textarea {
+    flex: 1;
+    resize: none;
+    min-height: 50px;
+}
+
+.ai-input-container button {
+    align-self: flex-end;
+}
+
+.ai-input-container button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ==================== Template Selector Dropdown ==================== */
+.template-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    margin-top: var(--spacing-sm);
+}
+
+.template-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    text-align: left;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.template-option:hover {
+    background: var(--bg-tertiary);
+}
+
+.template-option.selected {
+    background: rgba(37, 99, 235, 0.2);
+    color: var(--primary-light);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1200px) {
+    .builder-preview {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .builder-sidebar {
+        display: none;
+    }
+
+    .builder-main {
+        padding: var(--spacing-md);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-assist-bar {
+        flex-direction: column;
+    }
+
+    .builder-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .header-center {
+        display: none !important;
+    }
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+    .builder-header,
+    .builder-sidebar,
+    .builder-preview {
+        display: none !important;
+    }
+
+    .builder-main {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .form-section {
+        display: none !important;
+    }
+
+    .resume-preview {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
