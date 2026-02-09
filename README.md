@@ -217,5 +217,5 @@ For support, email mahdiislam237@gmail.com or open an issue.
 
 ---
 
-Built with ❤️ by MAHDI Team
+Built with ❤️ by MAHDI 
 
