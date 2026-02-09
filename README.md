@@ -1,4 +1,4 @@
-FreeUltraCV - Professional Resume Builder
+CV-MAKER-WEB - Professional Resume Builder
 ==========================================
 
 A free, production-ready CV/resume maker website with AI-powered features.
@@ -49,8 +49,8 @@ A free, production-ready CV/resume maker website with AI-powered features.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/FreeUltraCV.git
-cd FreeUltraCV
+git clone https://github.com/yourusername/cv-maker-web.git
+cd cv-maker-web
 ```
 
 2. Create virtual environment:
@@ -218,4 +218,5 @@ For support, email mahdiislam237@gmail.com or open an issue.
 ---
 
 Built with ❤️ by MAHDI 
+
 
