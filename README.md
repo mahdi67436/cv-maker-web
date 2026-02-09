@@ -213,8 +213,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For support, email support@freultracv.com or open an issue.
+For support, email mahdiislam237@gmail.com or open an issue.
 
 ---
 
-Built with ❤️ by FreeUltraCV Team
+Built with ❤️ by MAHDI Team
+
